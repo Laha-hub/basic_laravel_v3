@@ -20,7 +20,6 @@ Route::get('/', function () {
         'Title C',
     ];
 
-    //index.blade.phpにて、$postsの内容を'posts'という変数名で受け取れる。
     return view('index')
         ->with(['posts' => $posts]);
 });
