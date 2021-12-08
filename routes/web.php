@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $posts = [
+        'Title A',
+        'Title B',
+        'Title C',
+    ];
+
+    //index.blade.phpにて、$postsの内容を'posts'という変数名で受け取れる。
+    return view('index')
+        ->with(['posts' => $posts]);
 });

@@ -1,3 +1,15 @@
+<?php
+
+// var_dump($posts);
+// exit;
+
+// dump & die（laravel用）
+dd($posts);
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
