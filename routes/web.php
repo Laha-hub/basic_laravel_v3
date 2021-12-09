@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $posts = [
-        'Title A',
-        'Title B',
-        'Title C',
-    ];
+// 配列にて ['該当クラス名', '該当メソッド名'] の形式で指定する。
+// Route::get('/', ['App\Http\Controllers\PostController', 'index']);
 
-    return view('index')
-        ->with(['posts' => $posts]);
-});
+// 上記の書き換え版（::classで文字列として取得できる）
+// Route::get('/', [App\Http\Controllers\PostController::class, 'index']);
+
+// useしておけば短縮化
+Route::get('/', [PostController::class, 'index']);
