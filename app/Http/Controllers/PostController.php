@@ -14,20 +14,14 @@ class PostController extends Controller
 
     public function index()
     {
-        // showメソッドでも$postsを扱えるよう、privateプロパティに変更
-        // $posts = [
-        //     'Title A',
-        //     'Title B',
-        //     'Title C',
-        // ];
-
         return view('index')
             ->with(['posts' => $this->posts]);
     }
 
     public function show($id)
     {
-        return view('show')
+        // return view('show')
+        return view('posts.show')
             ->with(['post' => $this->posts[$id]]);
     }
 }
