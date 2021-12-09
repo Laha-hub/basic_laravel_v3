@@ -14,11 +14,4 @@ use App\Http\Controllers\PostController;
 |
 */
 
-// 配列にて ['該当クラス名', '該当メソッド名'] の形式で指定する。
-// Route::get('/', ['App\Http\Controllers\PostController', 'index']);
-
-// 上記の書き換え版（::classで文字列として取得できる）
-// Route::get('/', [App\Http\Controllers\PostController::class, 'index']);
-
-// useしておけば短縮化
 Route::get('/', [PostController::class, 'index']);
