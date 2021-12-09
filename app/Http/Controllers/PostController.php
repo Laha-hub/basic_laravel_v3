@@ -20,7 +20,6 @@ class PostController extends Controller
 
     public function show($id)
     {
-        // return view('show')
         return view('posts.show')
             ->with(['post' => $this->posts[$id]]);
     }
