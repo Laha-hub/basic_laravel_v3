@@ -15,3 +15,13 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', [PostController::class, 'index']);
+
+
+// 記事毎にルーティングを用意すると、コードが大量に発生してしまう...
+// Route::get('/posts/0', [PostController::class, 'show']);
+// Route::get('/posts/1', [PostController::class, 'show']);
+// Route::get('/posts/2', [PostController::class, 'show']);
+
+// => URLの一部をパラメータ化することで、ルーティングを集約できる。
+Route::get('/posts/{id}', [PostController::class, 'show']);
+
